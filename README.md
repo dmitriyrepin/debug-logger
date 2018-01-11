@@ -1,5 +1,6 @@
 # Introduction
-Debugging and Stackdriver loggingNode.js/Express.js app
+Debugging and Stackdriver logging for a Node.js/Express.js app
+
 ## Motivation
 * When debugging locally, we often use console.log()
   * No message categorization or visual cues
@@ -10,15 +11,60 @@ Debugging and Stackdriver loggingNode.js/Express.js app
   It is possible, but hard, to search for errors vs info/debug output
   * nginx.request log contains a lot of usefull information (request latency, referrer, method url; response status; latency). However, the __request headers__ and the __request parameters__ are not reported
 
+## Solution
+
+The Logger class
+
+* __Logger.error(error: Error)__  
+  Logs an ERROR with the Error message and the stack trace.  
+  Displays those, if enabled, on the console and in the Stackdriver log.  
+
+* __Logger.error(message: string)__  
+  Logs an ERROR with the message.  
+  Displays it, if enabled, on the console and in the Stackdriver log.  
+
+* __Logger.warn(error: Error)__  
+  Logs a WARNING with the Error message.  
+  Displays it, if enabled, on the console and in the Stackdriver log.  
+
+* __Logger.warn(message: string)__  
+  Logs a WARNING with the message.  
+  Displays it, if enabled, on the console and in the Stackdriver log.
+
+* __Logger.info(message: string)__  
+  Logs an INFO with the message.  
+  Displays it, if enabled, on the console and in the Stackdriver log.
+
+* __Logger.debug(message: string)__  
+  Logs a debug message.  
+  Displays it, if enabled, on the console.
+
+Control what messages are displayed by setting the DEBUG environment variable.
+
+Linux:
+
+    export DEBUG=moduleName:*,-moduleName:debug			
+
+Windows:
+
+    $env:DEBUG = "moduleName:*,-moduleName:debug”
+
+
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+1.	Installation dependencies
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests.
+        npm install
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better.
+2.	Run locally
+
+    Linux:
+
+        ./serve.sh
+
+    Windows:
+
+        ./serve.ps1
+
+3.	Deploy to the Google App Engine
+
+        gcloud app deploy

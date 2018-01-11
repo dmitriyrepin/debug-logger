@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "description": "A node server for prototyping work",
   "private": true,
-  "main": "bin/server.js",
-  "types": "bin/server.d.ts",
+  "main": "bin/logger.js",
+  "types": "bin/logger.d.ts",
   "scripts": {
-    "start": "node ./bin/server.js",
+    "start": "node ./bin/demo-app/server.js",
     "serve": "serve.sh",
     "pretest": "./node_modules/typescript/bin/tsc",
     "test": "mocha --slow 0 -r ts-node/register ./src/tests/**/*.test.ts"

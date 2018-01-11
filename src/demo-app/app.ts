@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 const app = exp();
 
 // view engine setup
-app.set('../views', path.join(__dirname, 'views'));
+app.set('../../views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(favicon(path.join(__dirname, '../../public/images', 'cube-16x16.png')));
@@ -33,7 +33,7 @@ app.use(cookieParser());
 // Add the request logger before anything else so that it can accurately log requests.
 app.use(Logger.requestMiddleware);
 
-app.use(exp.static(path.join(__dirname, '../public')));
+app.use(exp.static(path.join(__dirname, '../../public')));
 
 // setup routes
 app.use('/', index);
