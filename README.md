@@ -1,5 +1,14 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Introduction
+Debugging and Stackdriver loggingNode.js/Express.js app
+## Motivation
+* When debugging locally, we often use console.log()
+  * No message categorization or visual cues
+  * Very fast the console becomes overflown with messages
+  * Debugging output will pollute Stackdriver logs
+* When working Stackdriver logs
+  * reviewing __stdout__ and __stderr__ logs can be overwhelming.
+  It is possible, but hard, to search for errors vs info/debug output
+  * nginx.request log contains a lot of usefull information (request latency, referrer, method url; response status; latency). However, the __request headers__ and the __request parameters__ are not reported
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
@@ -9,12 +18,7 @@ TODO: Guide users through getting your code up and running on their own system. 
 4.	API references
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+TODO: Describe and show how to build your code and run the tests.
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+TODO: Explain how other users and developers can contribute to make your code better.
