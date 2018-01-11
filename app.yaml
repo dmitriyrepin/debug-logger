@@ -5,17 +5,12 @@ env: flex
 # Skip test files
 skip_files: tests/*
 
-automatic_scaling:
-  min_num_instances: 1
-  max_num_instances: 1
-
-# network:
-#   instance_tag: node-async-instance
-#   name: node-async-network
+manual_scaling:
+  instances: 1
 
 resources:
-  cpu: 2
-  memory_gb: 2.0
+  cpu: 1
+  memory_gb: 0.5
 
 env_variables:
   DEBUG: debug-logger:*

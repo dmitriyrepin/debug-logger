@@ -1,6 +1,6 @@
 {
   "name": "debug-logger",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A node server for prototyping work",
   "private": true,
   "main": "bin/logger.js",
@@ -20,9 +20,6 @@
     "bin/*.*"
   ],
   "license": "UNLICENSED",
-  "engines": {
-    "node": ">=6.11.3"
-  },
   "dependencies": {
     "@google-cloud/debug-agent": "^2.3.1",
     "@google-cloud/logging-winston": "^0.7.0",
