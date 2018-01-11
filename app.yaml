@@ -1,0 +1,21 @@
+service: debug-logger
+runtime: nodejs
+env: flex
+
+# Skip test files
+skip_files: tests/*
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1
+
+# network:
+#   instance_tag: node-async-instance
+#   name: node-async-network
+
+resources:
+  cpu: 2
+  memory_gb: 2.0
+
+env_variables:
+  DEBUG: debug-logger:*
